@@ -36,14 +36,14 @@
 
 
 
-<link rel="stylesheet" href="https://tinymud.com/scss/journal.min.5e8f3f653e9f6ce67bf72ff8ee6fee69decf7b5639a3ae7f8344750ad4e065b1.css" integrity="sha256-Xo8/ZT6fbOZ79y/47m/uad7Pe1Y5o65/g0R1CtTgZbE=" media="screen">
+<link rel="stylesheet" href="http://godmud.com/scss/journal.min.5e8f3f653e9f6ce67bf72ff8ee6fee69decf7b5639a3ae7f8344750ad4e065b1.css" integrity="sha256-Xo8/ZT6fbOZ79y/47m/uad7Pe1Y5o65/g0R1CtTgZbE=" media="screen">
 
 
 
-<link rel="stylesheet" href="https://tinymud.com/scss/dark-mode.min.bdfa63b2e89903517dcbb1032b537d54cff3f425c19d008a78dfe49e6cd07ced.css" integrity="sha256-vfpjsuiZA1F9y7EDK1N9VM/z9CXBnQCKeN/knmzQfO0=" media="screen">
+<link rel="stylesheet" href="http://godmud.com/scss/dark-mode.min.bdfa63b2e89903517dcbb1032b537d54cff3f425c19d008a78dfe49e6cd07ced.css" integrity="sha256-vfpjsuiZA1F9y7EDK1N9VM/z9CXBnQCKeN/knmzQfO0=" media="screen">
 
 
-<script src="https://tinymud.com/js/loadCSS.js"></script>
+<script src="http://godmud.com/js/loadCSS.js"></script>
 <script>
   loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
 </script>
@@ -52,7 +52,7 @@
 
 
   
-    <script src="https://tinymud.com/js/toc-collapse.js"></script>
+    <script src="http://godmud.com/js/toc-collapse.js"></script>
   
 
 
@@ -78,10 +78,10 @@ var _hmt = _hmt || [];
 <body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head false" href="https://tinymud.com">
+    <a class="a-block nav-head false" href="http://godmud.com">
     
         <div class="nav-title">
-            工作灵感
+            我的工作灵感
         </div>
         
     </a>
@@ -198,8 +198,8 @@ var _hmt = _hmt || [];
                 menu
             </i>
         </button>
-        <a ref="navTitle" class="navbar-brand" href="https://tinymud.com">
-            工作灵感
+        <a ref="navTitle" class="navbar-brand" href="http://godmud.com">
+            我的工作灵感
         </a>
         
         <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
@@ -215,8 +215,8 @@ var _hmt = _hmt || [];
 </nav>
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
-    <a href="https://tinymud.com">
-        <div class="single-column-header-title">工作灵感</div>
+    <a href="http://godmud.com">
+        <div class="single-column-header-title">我的工作灵感</div>
         
 
     </a>
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
                 
                 <div class="post-body" v-pre>
                 
-                    <p>之前说到了如何从C函数声明通过简单的查找替换生成一份C#的静态引用声明(<a href="https://tinymud.com/posts/2015/06/07/csnative1/">C#与非托管——初体验</a>)，因为只是简单说明，所以全部采用的是基础类型匹配和自动封送。自动封送虽然能省去我们不少编码时间，但如果不理解自动封送背后的实际行为，那就如同看魔术师的黑盒子，知其然不知其所以然。而且，自动封送也不是永远有效的万能药，因此这里记录一下封送相关的理解。</p>
+                    <p>之前说到了如何从C函数声明通过简单的查找替换生成一份C#的静态引用声明(<a href="http://godmud.com/posts/2015/06/07/csnative1/">C#与非托管——初体验</a>)，因为只是简单说明，所以全部采用的是基础类型匹配和自动封送。自动封送虽然能省去我们不少编码时间，但如果不理解自动封送背后的实际行为，那就如同看魔术师的黑盒子，知其然不知其所以然。而且，自动封送也不是永远有效的万能药，因此这里记录一下封送相关的理解。</p>
 <p>非基础类型在C#与Native代码交互时需要进行封送处理，一般的封送处理方式有内存拷贝、固定内存地址，总结如下：</p>
 <ol>
 <li>针对string，可以使用Marshal.StringToHGlobalAnsi、Marshal.StringToHGlobalAuto、Marshal.StringToHGlobalUni把string封送到非托管函数，之后需要调用Marshal.FreeHGlobal释放内存；或者使用Marshal.PtrToStringAnsi、Marshal.PtrToStringAuto、Marshal.PtrToStringUni从非托管函数里面取出string。</li>
@@ -296,13 +296,13 @@ var _hmt = _hmt || [];
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://tinymud.com/posts/2015/12/31/nodejs/">
+                <a class="newer-posts" href="http://godmud.com/posts/2015/12/31/nodejs/">
 			下回<br>node.js使用感想
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://tinymud.com/posts/2015/06/08/androidsdk/">
+                <a class="older-posts" href="http://godmud.com/posts/2015/06/08/androidsdk/">
 			上回<br>android sdk更新的终极解决方案
                 </a>
                 
@@ -426,6 +426,6 @@ app = new Vue({
 });
 </script>
 
-<script src="https://tinymud.com/js/journal.js"></script>
+<script src="http://godmud.com/js/journal.js"></script>
     </body>
 </html>

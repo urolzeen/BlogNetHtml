@@ -2,148 +2,148 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tinymud.com/</loc>
+    <loc>http://godmud.com/posts/</loc>
     <lastmod>2017-03-19T17:58:34+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/</loc>
+    <loc>http://godmud.com/</loc>
     <lastmod>2017-03-19T17:58:34+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2017/03/19/fileserver/</loc>
+    <loc>http://godmud.com/posts/2017/03/19/fileserver/</loc>
     <lastmod>2017-03-19T17:58:34+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/redis/</loc>
+    <loc>http://godmud.com/tags/redis/</loc>
     <lastmod>2017-03-12T19:09:25+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/</loc>
+    <loc>http://godmud.com/tags/</loc>
     <lastmod>2017-03-12T19:09:25+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/</loc>
+    <loc>http://godmud.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/</loc>
     <lastmod>2017-03-12T19:09:25+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2017/03/12/redis/</loc>
+    <loc>http://godmud.com/posts/2017/03/12/redis/</loc>
     <lastmod>2017-03-12T19:09:25+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/mysql/</loc>
+    <loc>http://godmud.com/tags/mysql/</loc>
     <lastmod>2016-11-06T08:38:07+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/11/06/mysqlpoor/</loc>
+    <loc>http://godmud.com/posts/2016/11/06/mysqlpoor/</loc>
     <lastmod>2016-11-06T08:38:07+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/11/06/sftp/</loc>
+    <loc>http://godmud.com/posts/2016/11/06/sftp/</loc>
     <lastmod>2016-11-06T08:19:10+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/ftp/</loc>
+    <loc>http://godmud.com/tags/ftp/</loc>
     <lastmod>2016-11-06T08:19:10+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/sftp/</loc>
+    <loc>http://godmud.com/tags/sftp/</loc>
     <lastmod>2016-11-06T08:19:10+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/7z/</loc>
+    <loc>http://godmud.com/tags/7z/</loc>
     <lastmod>2016-08-31T01:45:56+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/c#/</loc>
+    <loc>http://godmud.com/tags/c#/</loc>
     <lastmod>2016-08-31T01:45:56+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/sevenzipsharp/</loc>
+    <loc>http://godmud.com/tags/sevenzipsharp/</loc>
     <lastmod>2016-08-31T01:45:56+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/31/sevenzipsharp2/</loc>
+    <loc>http://godmud.com/posts/2016/08/31/sevenzipsharp2/</loc>
     <lastmod>2016-08-31T01:45:56+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/zlib/</loc>
+    <loc>http://godmud.com/tags/zlib/</loc>
     <lastmod>2016-08-31T01:36:48+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/31/sevenzipsharp/</loc>
+    <loc>http://godmud.com/posts/2016/08/31/sevenzipsharp/</loc>
     <lastmod>2016-08-31T01:36:48+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/epplus/</loc>
+    <loc>http://godmud.com/tags/epplus/</loc>
     <lastmod>2016-08-31T00:55:19+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/excel/</loc>
+    <loc>http://godmud.com/tags/excel/</loc>
     <lastmod>2016-08-31T00:55:19+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/xlsx/</loc>
+    <loc>http://godmud.com/tags/xlsx/</loc>
     <lastmod>2016-08-31T00:55:19+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/31/epplus/</loc>
+    <loc>http://godmud.com/posts/2016/08/31/epplus/</loc>
     <lastmod>2016-08-31T00:55:19+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/async/</loc>
+    <loc>http://godmud.com/tags/async/</loc>
     <lastmod>2016-08-16T03:45:37+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/coroutine/</loc>
+    <loc>http://godmud.com/tags/coroutine/</loc>
     <lastmod>2016-08-16T03:45:37+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/cps/</loc>
+    <loc>http://godmud.com/tags/cps/</loc>
     <lastmod>2016-08-16T03:45:37+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/lua/</loc>
+    <loc>http://godmud.com/tags/lua/</loc>
     <lastmod>2016-08-16T03:45:37+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/16/coroutine/</loc>
+    <loc>http://godmud.com/posts/2016/08/16/coroutine/</loc>
     <lastmod>2016-08-16T03:45:37+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/14/async/</loc>
+    <loc>http://godmud.com/posts/2016/08/14/async/</loc>
     <lastmod>2016-08-14T19:26:40+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>http://godmud.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2016-08-14T19:26:40+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/windows/</loc>
+    <loc>http://godmud.com/tags/windows/</loc>
     <lastmod>2016-08-11T23:53:24+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/08/11/wincase/</loc>
+    <loc>http://godmud.com/posts/2016/08/11/wincase/</loc>
     <lastmod>2016-08-11T23:53:24+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
+    <loc>http://godmud.com/tags/%E8%B7%A8%E5%B9%B3%E5%8F%B0/</loc>
     <lastmod>2016-08-11T23:53:24+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/01/30/ssdb/</loc>
+    <loc>http://godmud.com/posts/2016/01/30/ssdb/</loc>
     <lastmod>2016-01-30T09:59:03+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/docker/</loc>
+    <loc>http://godmud.com/tags/docker/</loc>
     <lastmod>2016-01-19T12:20:05+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2016/01/19/docker/</loc>
+    <loc>http://godmud.com/posts/2016/01/19/docker/</loc>
     <lastmod>2016-01-19T12:20:05+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/javascript/</loc>
+    <loc>http://godmud.com/tags/javascript/</loc>
     <lastmod>2015-12-31T22:53:12+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/node.js/</loc>
+    <loc>http://godmud.com/tags/node.js/</loc>
     <lastmod>2015-12-31T22:53:12+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/12/31/nodejs/</loc>
+    <loc>http://godmud.com/posts/2015/12/31/nodejs/</loc>
     <lastmod>2015-12-31T22:53:12+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/c#%E4%B8%8E%E9%9D%9E%E6%89%98%E7%AE%A1/</loc>
+    <loc>http://godmud.com/tags/c#%E4%B8%8E%E9%9D%9E%E6%89%98%E7%AE%A1/</loc>
     <lastmod>2015-06-08T09:38:21+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/06/08/csnative2/</loc>
+    <loc>http://godmud.com/posts/2015/06/08/csnative2/</loc>
     <lastmod>2015-06-08T09:38:21+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/unity3d/</loc>
+    <loc>http://godmud.com/tags/unity3d/</loc>
     <lastmod>2015-06-08T09:38:21+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/android/</loc>
+    <loc>http://godmud.com/tags/android/</loc>
     <lastmod>2015-06-08T00:03:33+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/06/08/androidsdk/</loc>
+    <loc>http://godmud.com/posts/2015/06/08/androidsdk/</loc>
     <lastmod>2015-06-08T00:03:33+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/06/07/csnative1/</loc>
+    <loc>http://godmud.com/posts/2015/06/07/csnative1/</loc>
     <lastmod>2015-06-07T21:10:40+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/06/07/csnative/</loc>
+    <loc>http://godmud.com/posts/2015/06/07/csnative/</loc>
     <lastmod>2015-06-07T21:02:53+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/posts/2015/06/04/start/</loc>
+    <loc>http://godmud.com/posts/2015/06/04/start/</loc>
     <lastmod>2015-06-04T14:05:29+08:00</lastmod>
   </url><url>
-    <loc>https://tinymud.com/tags/async/await/</loc>
+    <loc>http://godmud.com/tags/async/await/</loc>
   </url><url>
-    <loc>https://tinymud.com/categories/</loc>
+    <loc>http://godmud.com/categories/</loc>
   </url><url>
-    <loc>https://tinymud.com/tags/p/invokes/</loc>
+    <loc>http://godmud.com/tags/p/invokes/</loc>
   </url>
 </urlset>
