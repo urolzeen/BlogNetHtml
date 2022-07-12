@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html><head>
+<title>node.js使用感想</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../vendor/js/jquery.min.js" ></script>
+<script src="../../../../../vendor/js/popper.min.js" ></script>
+<script src="../../../../../vendor/js/bootstrap.min.js" ></script>
+<script src="../../../../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../../../../../vendor/css/bootstrap.min.css">
+<script src="../../../../../vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<script src="https://tinymud.com/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="https://tinymud.com/js/toc-collapse.js"></script>
+  
+
+
+
+
+
+
+
+
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jaf6yFbzJP89Gl2M",ck: "Jaf6yFbzJP89Gl2M"})</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d37d443059f32e784f107711ff2b098";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://tinymud.com">
+    
+        <div class="nav-title">
+            工作灵感
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="../../../../../posts/">
+                灵感
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="../../../../../about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="../../../../../posts/">
+                    灵感
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="../../../../../about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://tinymud.com">
+            工作灵感
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://tinymud.com">
+        <div class="single-column-header-title">工作灵感</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    node.js使用感想
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2015-12-31 22:53
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="../../../../../tags/node.js">node.js</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/javascript">javascript</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>最近尝试了使用node.js，但因为不是太深入(小项目，还没做完)，所以不能谈心得谈经验，就来谈谈使用感想。</p>
+<p>node.js和以往的cgi接口的服务器+cgi程序(如apache+phpmod)中的单个角色不同，他自身是一个完整的程序，以库的形式提供了各种各样的功能，如果不写一行代码，apache、nginx等至少能做一个文件服务器，而node.js连端口都没监听。可以这么认为，node.js是一个类似lua/python的interpreter的javascript的interpreter，同时扩展了javascript的库，使其具有socket、文件、二进制buffer等功能。可以这么认为，node.js只是可以用做服务器，而非只是一个服务器。下面谈谈我认为的node.js的优劣。</p>
+<p>优点：</p>
+<ol>
+<li>node.js以javascript作为唯一支持语言，是他的特点，也是他的之所以能这么成功的原因。web开发人员众多，已经成就了jsp，php，ruby等多个语言，而现在出现了大家一早就熟悉的javascript也可以做后端，自然会受到追棒。node.js满足了javascript进行全栈开发的需求。</li>
+<li>通过异步回调和事件，让当前进程专注于计算，IO之类的费时操作通过其他线程处理之后再回调到当前线程，相比php，每个页面的响应时间都很合理(一个页面不会影响其他页面)；相比java的多线程编程，他又没有其复杂性(不用加锁和考虑先后)。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>太多的异步回调给书写带来了很大的麻烦，对异常处理也非常不友好，模块间更容易造成耦合，而且看起来相比stackfull的coroutine节省了堆栈的开销，但实际上闭包或者promise会多构造很多个，内存、gc和调用消耗上并不一定能节省。</li>
+<li>javascript的版本问题。当前版本的javascript并不是能让人非常舒服的写代码(再没有一个语言有像javascript这么多的compile to js项目)，因此有各自编译到javascript的语言，还有ECMAScript6和ECMAScript7。到目前为止，node.js的稳定版(4.2.4)还是默认不支持ECMAScript6的，需要加上&ndash;use-strict &ndash;harmony参数。当然我推荐把这个参数写到类似gulp的脚本里。</li>
+<li>项目依赖和查找糟糕。开发方面，官方推荐通过package.json设置依赖，npm自动安装依赖包，但是npm里面的包质量参差不齐，我就遇到好几个包在类似socket.on(&rsquo;error&rsquo;)的回调中直接throw异常的，另外还有些有兼容性的问题。而本项目的查找路径和node_modules写法完全不一样，一个是./xxx/xxx一个是xxx，发现包有问题想自己修改放到项目内，还得同时修改众多的require。此外一个不是很影响体验的瑕疵，node_modules里面貌似每个项目都把自己的依赖包给下载到自己的子node_modules文件夹里面，如果依赖包里面还有依赖，又会继续包含进来，导致文件夹层次和路径非常深，不得不说这个做法比较奇葩。</li>
+<li>node.js很容易被误用的一点，就是认为他的session具有相关性，从而试图在内存中缓存一些东西，而node.js实际上也没有对这种做法做任何的禁止和警示。不像php等cgi，每次请求都是一次全新的页面解释，不存在任何的全局变量(为了加速可能会缓存解析结果，但只是缓存字节码或者语法树之类的，每次调用的环境肯定是全新的)，而node.js的请求并不清空环境。这一条咋看起来毫无问题，说不定还能利用这点做一些一般服务器较难实现的响应(比如实时传输文件等)。但是因为pm2等启动工具，以及node后来版本新增的cluster启动，都会导致同一用户的多次请求会被分发到不同的进程，而你毫不知情。</li>
+</ol>
+<p>以上是一个node.js初学者的使用感受，可能看起来满腹牢骚，不过也是因为教训深刻，爱恨交织。至少目前为止已经有2点我始终不会忘了：</p>
+<ol>
+<li>不要在回调函数里面throw异常</li>
+<li>不要试图在全局变量中缓存处理结果，最好连全局变量都不要使用</li>
+</ol>
+<p>另外说一句，<a href="https://nodejs.org/dist/latest-v4.x/docs/api/documentation.html">官方的文档</a>实在太差劲了，连回调函数的参数说明都没有。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2015-12-31</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://tinymud.com/posts/2016/01/19/docker/">
+			下回<br>docker 操作记录
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://tinymud.com/posts/2015/06/08/csnative2/">
+			上回<br>C#与非托管——封送和自动封送
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+</div>
+            </div>
+    
+    <script src="../../../../../js/journal.js"></script>
+    </body>
+</html>

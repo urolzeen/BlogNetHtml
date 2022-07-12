@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html><head>
+<title>Debian 8开启sftp服务</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../vendor/js/jquery.min.js" ></script>
+<script src="../../../../../vendor/js/popper.min.js" ></script>
+<script src="../../../../../vendor/js/bootstrap.min.js" ></script>
+<script src="../../../../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../../../../../vendor/css/bootstrap.min.css">
+<script src="../../../../../vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<script src="https://tinymud.com/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="https://tinymud.com/js/toc-collapse.js"></script>
+  
+
+
+
+
+
+
+
+
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jaf6yFbzJP89Gl2M",ck: "Jaf6yFbzJP89Gl2M"})</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d37d443059f32e784f107711ff2b098";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://tinymud.com">
+    
+        <div class="nav-title">
+            工作灵感
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="../../../../../posts/">
+                灵感
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="../../../../../about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="../../../../../posts/">
+                    灵感
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="../../../../../about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://tinymud.com">
+            工作灵感
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://tinymud.com">
+        <div class="single-column-header-title">工作灵感</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Debian 8开启sftp服务
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-11-06 08:19
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="../../../../../tags/ftp">ftp</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/sftp">sftp</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>看到某云的CDN居然是使用ftp这种早该淘汰的协议，不禁有些吐槽。ftp曾经作为互联网上最重要的协议，但漫长使用过程中体现出的各种缺点，已不适合再使用。其中最致命的问题就是明文传输用户密码。建议使用这种CDN时，最好长个心眼关闭ftp管理方式，直接使用回源透传的模式。</p>
+<p>不过某些情况下，不适合使用svn、git之类的方式来传输文件时(一般是不需要版本管理的二进制文件)，最合适的选择就是ftp这种类型的协议。ftp的替代品也不少，如sftp、ftps、webdav。我个人最看好的是webdav，但是鉴于几乎所有的linux服务器都安装了ssh，使用sftp可以更省资源，不需要开启额外的进程和端口。接下来记录sftp的设置过程，系统环境基于debian 8。</p>
+<p>我的需求是这样的：设置一个sftp目录，可以通过sftp上传/下载，同时nginx也需要能够读写，以方便我上传/更新web程序，以及下载web服务器的日志。</p>
+<p>操作流程如下：</p>
+<ol>
+<li>添加sftp账号
+<ol>
+<li>首先建立好sftp的目录：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir /var/sftp
+</span></span></code></pre></div><ol start="2">
+<li>创建用于sftp的用户和用户组</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>groupadd sftp
+</span></span><span style="display:flex;"><span>useradd -g sftp -d /var/sftp -s /bin/false sftp
+</span></span><span style="display:flex;"><span>passwd sftp
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置密码</span>
+</span></span></code></pre></div></li>
+<li>通过chroot限制sftp服务的访问目录
+<ol>
+<li>编辑ssh的配置文件，设置chroot目录，把sftp限制在他的用户目录下(%h代表用户目录)，并且禁止掉其他不需要的ssh权限</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nano /etc/ssh/sshd_config
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 找到Subsystem，注释掉原来的那行</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Subsystem sftp /usr/lib/openssh/sftp-server</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再添加下面的新行</span>
+</span></span><span style="display:flex;"><span>Subsystem sftp internal-sftp
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 限制sftp的目录，让他看不到不应该看到的东西</span>
+</span></span><span style="display:flex;"><span>Match Group sftp
+</span></span><span style="display:flex;"><span>ChrootDirectory %h
+</span></span><span style="display:flex;"><span>AllowTcpForwarding no
+</span></span><span style="display:flex;"><span>X11Forwarding no
+</span></span><span style="display:flex;"><span>ForceCommand internal-sftp
+</span></span></code></pre></div><ol start="2">
+<li>创建上传目录并设置权限，ChrootDirectory的目录和其所有上层目录的所有者必须是root，并且权限不能大于755</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /var/sftp
+</span></span><span style="display:flex;"><span>mkdir www
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">770</span> www
+</span></span><span style="display:flex;"><span>chown sftp:sftp www
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">755</span> sftp
+</span></span><span style="display:flex;"><span>chown root:root sftp
+</span></span></code></pre></div></li>
+<li>设置掩码，以便外部程序能够使用
+<ol>
+<li>sftp上传过程中创建的目录和文件所有者固定为sftp:sftp，权限默认为755，其他用户只能读不能写。这里我们需要修改为可以被组成员读写(当然了解原理后你也可以图省事，直接允许所有用户读写)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nano /etc/pam.d/sshd
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在文件最末尾添加</span>
+</span></span><span style="display:flex;"><span>session optional pam_umask.so umask<span style="color:#f92672">=</span><span style="color:#ae81ff">0007</span> <span style="color:#75715e"># 也可以是0002</span>
+</span></span></code></pre></div><ol start="2">
+<li>给nginx使用的用户添加用户组sftp，我这里是www-data</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>usermod -G sftp www-data
+</span></span></code></pre></div><ol start="3">
+<li>还原shell中的默认umask，避免被sftp覆盖</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nano /etc/profile
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在文件最末尾添加</span>
+</span></span><span style="display:flex;"><span>umask <span style="color:#ae81ff">022</span>
+</span></span></code></pre></div></li>
+</ol>
+<p>到此，我们已经顺利的架设了sftp服务，可以使用各种流行的ftp客户端，比如FileZilla、FlashFXP安逸的上传/下载文件啦。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2016-11-06</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://tinymud.com/posts/2016/11/06/mysqlpoor/">
+			下回<br>分享一个低配VPS下运行的mysql配置文件
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://tinymud.com/posts/2016/08/31/sevenzipsharp2/">
+			上回<br>使用SevenZipSharp出现“Can not load 7-zip library or internal COM error! Message: DLL file does not exist.”的解决方案
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+</div>
+            </div>
+    
+    <script src="../../../../../js/journal.js"></script>
+    </body>
+</html>

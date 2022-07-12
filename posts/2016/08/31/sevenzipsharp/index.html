@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html><head>
+<title>使用SevenZipSharp压缩/解压7z格式</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../vendor/js/jquery.min.js" ></script>
+<script src="../../../../../vendor/js/popper.min.js" ></script>
+<script src="../../../../../vendor/js/bootstrap.min.js" ></script>
+<script src="../../../../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../../../../../vendor/css/bootstrap.min.css">
+<script src="../../../../../vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<script src="https://tinymud.com/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="https://tinymud.com/js/toc-collapse.js"></script>
+  
+
+
+
+
+
+
+
+
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jaf6yFbzJP89Gl2M",ck: "Jaf6yFbzJP89Gl2M"})</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d37d443059f32e784f107711ff2b098";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://tinymud.com">
+    
+        <div class="nav-title">
+            工作灵感
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="../../../../../posts/">
+                灵感
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="../../../../../about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="../../../../../posts/">
+                    灵感
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="../../../../../about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://tinymud.com">
+            工作灵感
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://tinymud.com">
+        <div class="single-column-header-title">工作灵感</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    使用SevenZipSharp压缩/解压7z格式
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2016-08-31 01:36
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="../../../../../tags/c">c#</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/7z">7z</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/zlib">zlib</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/sevenzipsharp">SevenZipSharp</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>7z格式采用的LZMA算法，号称具有现今最高压缩率。笔者在nuget上搜索7z，在搜索结果中最终选择了SevenZipSharp来进行压缩/解压。不得不说，SevenZipSharp的API设计得非常方便。</p>
+<ul>
+<li>压缩调用：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (FileStream ostream = <span style="color:#66d9ef">new</span> FileStream(outputpath, FileMode.Create, FileAccess.Write))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (FileStream istream = <span style="color:#66d9ef">new</span> FileStream(inputpath, FileMode.Open, FileAccess.Read))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        SevenZipCompressor compressor = <span style="color:#66d9ef">new</span> SevenZipCompressor();
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 这里可以输入多个文件名/流对</span>
+</span></span><span style="display:flex;"><span>        Dictionary&lt;<span style="color:#66d9ef">string</span>, Stream&gt; dict = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, Stream&gt; { { inputpath, istream } };
+</span></span><span style="display:flex;"><span>        compressor.CompressStreamDictionary(dict, ostream);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>解压调用：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (FileStream istream = <span style="color:#66d9ef">new</span> FileStream(inputpath, FileMode.Open, FileAccess.Read))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    SevenZip.SevenZipExtractor extractor = <span style="color:#66d9ef">new</span> SevenZip.SevenZipExtractor(istream);
+</span></span><span style="display:flex;"><span>    extractor.ExtractArchive(outputpath);    <span style="color:#75715e">// 全部解压到指定目录</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (FileStream ostream = <span style="color:#66d9ef">new</span> FileStream(outputpath, FileMode.Create, FileAccess.Write))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        extractor.ExtractFile(<span style="color:#ae81ff">0</span>, ostream);        <span style="color:#75715e">// 流式解压指定文件</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>顺便附上zlib的压缩/解压(使用zlib.net库)：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// 压缩</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Compress(<span style="color:#66d9ef">string</span> inputpath, <span style="color:#66d9ef">string</span> outputpath)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (FileStream ostream = <span style="color:#66d9ef">new</span> FileStream(outputpath, FileMode.Create, FileAccess.Write))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">using</span> (FileStream istream = <span style="color:#66d9ef">new</span> FileStream(inputpath, FileMode.Open, FileAccess.Read))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">using</span> (ZOutputStream zstream = <span style="color:#66d9ef">new</span> ZOutputStream(ostream, zlibConst.Z_BEST_COMPRESSION))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                CopyStream(istream, zstream);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 解压</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Decompress(<span style="color:#66d9ef">string</span> inputpath, <span style="color:#66d9ef">string</span> outputpath)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> (FileStream ostream = <span style="color:#66d9ef">new</span> FileStream(outputpath, FileMode.Create, FileAccess.Write))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">using</span> (FileStream istream = <span style="color:#66d9ef">new</span> FileStream(inputpath, FileMode.Open, FileAccess.Read))
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">using</span> (ZOutputStream zstream = <span style="color:#66d9ef">new</span> ZOutputStream(ostream))
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                CopyStream(istream, zstream);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> CopyStream(Stream input, Stream output)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">byte</span>[] buffer = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span>[<span style="color:#ae81ff">2000</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> len;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> ((len = input.Read(buffer, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2000</span>)) &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        output.Write(buffer, <span style="color:#ae81ff">0</span>, len);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    output.Flush();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2016-08-31</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://tinymud.com/posts/2016/08/31/sevenzipsharp2/">
+			下回<br>使用SevenZipSharp出现“Can not load 7-zip library or internal COM error! Message: DLL file does not exist.”的解决方案
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://tinymud.com/posts/2016/08/31/epplus/">
+			上回<br>使用EPPlus读写xlsx文件
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+</div>
+            </div>
+    
+    <script src="../../../../../js/journal.js"></script>
+    </body>
+</html>

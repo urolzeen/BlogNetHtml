@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html><head>
+<title>C#与非托管——动机</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../vendor/js/jquery.min.js" ></script>
+<script src="../../../../../vendor/js/popper.min.js" ></script>
+<script src="../../../../../vendor/js/bootstrap.min.js" ></script>
+<script src="../../../../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../../../../../vendor/css/bootstrap.min.css">
+<script src="../../../../../vendor/js/vue.min.js" ></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/journal.min.c5d92f380bf10f6849c7ac487c7df2b22c081e0851e5339224f1ae29210b20d2.css" integrity="sha256-xdkvOAvxD2hJx6xIfH3ysiwIHghR5TOSJPGuKSELINI=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://tinymud.com/scss/dark-mode.min.9f8d8c2df9285089d141edd4a50cb7506c7948e6ab79a29968dced1bd0ab7d22.css" integrity="sha256-n42MLfkoUInRQe3UpQy3UGx5SOareaKZaNztG9CrfSI=" media="screen">
+
+
+<script src="https://tinymud.com/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Noto+Serif+SC|Material+Icons");
+</script>
+
+
+
+
+  
+    <script src="https://tinymud.com/js/toc-collapse.js"></script>
+  
+
+
+
+
+
+
+
+
+
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jaf6yFbzJP89Gl2M",ck: "Jaf6yFbzJP89Gl2M"})</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5d37d443059f32e784f107711ff2b098";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://tinymud.com">
+    
+        <div class="nav-title">
+            工作灵感
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="../../../../../posts/">
+                灵感
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="../../../../../about/">
+                关于
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="../../../../../posts/">
+                    灵感
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="../../../../../about/">
+                    关于
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://tinymud.com">
+            工作灵感
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://tinymud.com">
+        <div class="single-column-header-title">工作灵感</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    C#与非托管——动机
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2015-06-07 21:02
+                        </time>
+                        
+
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="../../../../../tags/unity3d">unity3d</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/c">c#</a>
+                                &nbsp;
+                            
+                                <a href="../../../../../tags/c#%E4%B8%8E%E9%9D%9E%E6%89%98%E7%AE%A1">C#与非托管</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>Unity3D采用C#作为脚本开发语言，本来是可以直接提供代码局部更新机制的，可惜Mono和Unity3D迫于苹果的压力，在iOS上采用AOT模式运行，断绝了代码局部更新的路(任何一个具有很高知名度的引擎都不敢明着违反苹果的条款)，而Android的代码局部更新则被Unity3D做成了一个收费的售后服务项目。不过不是跨平台的机制都没有多大的意义，所以如果需要局部更新代码(大家也都称为热更新)，一般都需要采用脚本的方式，把大部分游戏内逻辑特别是变化很大的逻辑写在脚本里面，然后把脚本作为资源来做局部更新。</p>
+<p>让Unity3D支持脚本有两种方案：</p>
+<ol>
+<li>使用不含动态生成代码的C#子集实现一个脚本解释器，典型实现有C#Light、KopiLua和UniLua；</li>
+<li>使用P/Invokes让C#能够调用已有的C/C++脚本解释器，典型实现有ulua、slua。</li>
+</ol>
+<ul>
+<li><a href="https://www.cnblogs.com/crazylights/p/4230335.html">C#Light和升级版L#</a>：由于C#的语法特性较多，C#Light不太可能也没有必要实现所有的C#特性(如泛型)，因此按照C#的编程习惯比较容易遇到不兼容的问题需要调试或重写。虽然说减少了学习成本(不需要学习新的语言，直接以Unity3D支持C#进行开发)，但各种不支持的特性也算是一个很大的记忆负担。后来升级版的L#作者直接解析IL，编译直接利用VS的编译器，总算走出了语法解析的泥潭，但还是有很多特性不支持(目前已知的有引用、泛型、继承等)。此外C#对基础操作(比如读取内存偏移)性能较低，在做虚拟机时对脚本自身的运算效率低下。</li>
+<li><a href="http://www.ppl-pilot.com/kopilua.aspx">KopiLua</a>：应该是最早出现的Unity3D支持lua的库了，不过作者自己就说了，是对着lua源代码line by line从C源码port到C#的，而且lua的C源码里面大量使用了宏在C#里面只能是函数调用，所以性能低下是可以预见。</li>
+<li><a href="https://github.com/xebecnan/UniLua">UniLua</a>：专门用C#重写的lua虚拟机，如字符串之类的直接使用了C#原生类，效率还算不错。不过升级到lua5.2了，有人喜欢有人不喜欢吧。</li>
+<li><a href="http://www.ulua.org/">ulua</a>、<a href="https://github.com/pangweiwei/slua">slua</a>：后起之秀，配合上类似tolua++的代码预生成性能非常优越，瓶颈在于C#调用C/C++的native接口，所以交互部分需要精心设计，之后游戏逻辑就和开发quick-cocos-x游戏差不多了。</li>
+</ul>
+<p>无论是直接使用ulua还是自己进行封装，ulua的实现以及C#的非托管调用都是必须了解的。因此接下来我会陆续写一些这方面的内容，备忘的同时方便他人~</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2015-06-07</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://tinymud.com/posts/2015/06/07/csnative1/">
+			下回<br>C#与非托管——初体验
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://tinymud.com/posts/2015/06/04/start/">
+			上回<br>新的开始
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	&lt;a rel=&#34;external nofollow&#34; href=&#34;https://beian.miit.gov.cn&#34; target=&#34;_blank&#34; style=&#34;color: inherit;&#34;&gt;湘ICP备2020021765号-1&lt;/a&gt;
+	
+</div>
+            </div>
+    
+    <script src="../../../../../js/journal.js"></script>
+    </body>
+</html>
