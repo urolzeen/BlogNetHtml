@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://godmud.com/posts/</loc>
-    <lastmod>2022-07-12T20:52:26+08:00</lastmod>
+    <lastmod>2022-07-12T21:11:44+08:00</lastmod>
   </url><url>
-    <loc>http://godmud.com/posts/2022/07/12/newstart/</loc>
-    <lastmod>2022-07-12T20:52:26+08:00</lastmod>
+    <loc>http://godmud.com/posts/2022/07/12/20220712_1/</loc>
+    <lastmod>2022-07-12T21:11:44+08:00</lastmod>
   </url><url>
     <loc>http://godmud.com/</loc>
+    <lastmod>2022-07-12T21:11:44+08:00</lastmod>
+  </url><url>
+    <loc>http://godmud.com/posts/2022/07/12/newstart/</loc>
     <lastmod>2022-07-12T20:52:26+08:00</lastmod>
   </url><url>
     <loc>http://godmud.com/posts/2017/03/19/fileserver/</loc>
@@ -142,8 +145,6 @@
   </url><url>
     <loc>http://godmud.com/posts/2015/06/04/start/</loc>
     <lastmod>2015-06-04T14:05:29+08:00</lastmod>
-  </url><url>
-    <loc>http://godmud.com/posts/1/01/01/</loc>
   </url><url>
     <loc>http://godmud.com/tags/async/await/</loc>
   </url><url>
