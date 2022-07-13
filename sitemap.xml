@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://godmud.com/posts/</loc>
-    <lastmod>2022-07-12T21:11:44+08:00</lastmod>
+    <loc>http://godmud.com/posts/2022/07/13/20220713_2/</loc>
+    <lastmod>2022-07-13T09:20:03+08:00</lastmod>
   </url><url>
-    <loc>http://godmud.com/posts/2022/07/12/20220712_1/</loc>
-    <lastmod>2022-07-12T21:11:44+08:00</lastmod>
+    <loc>http://godmud.com/posts/</loc>
+    <lastmod>2022-07-13T09:20:03+08:00</lastmod>
   </url><url>
     <loc>http://godmud.com/</loc>
+    <lastmod>2022-07-13T09:20:03+08:00</lastmod>
+  </url><url>
+    <loc>http://godmud.com/posts/2022/07/13/20220713_1/</loc>
+    <lastmod>2022-07-13T09:08:41+08:00</lastmod>
+  </url><url>
+    <loc>http://godmud.com/posts/2022/07/12/20220712_1/</loc>
     <lastmod>2022-07-12T21:11:44+08:00</lastmod>
   </url><url>
     <loc>http://godmud.com/posts/2022/07/12/newstart/</loc>

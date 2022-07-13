@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html><head>
-<title>我的工作灵感</title>
+<title>creator RichText组件 click标签回调路径的问题</title>
 
 
-
-  
 
 
 <meta charset="utf-8">
@@ -26,12 +24,12 @@
 
 
 
-<script src="../../vendor/js/jquery.min.js" ></script>
-<script src="../../vendor/js/popper.min.js" ></script>
-<script src="../../vendor/js/bootstrap.min.js" ></script>
-<script src="../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
-<link type="text/css" rel="stylesheet" href="../../vendor/css/bootstrap.min.css">
-<script src="../../vendor/js/vue.min.js" ></script>
+<script src="../../../../../vendor/js/jquery.min.js" ></script>
+<script src="../../../../../vendor/js/popper.min.js" ></script>
+<script src="../../../../../vendor/js/bootstrap.min.js" ></script>
+<script src="../../../../../vendor/js/smooth-scroll.polyfills.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="../../../../../vendor/css/bootstrap.min.css">
+<script src="../../../../../vendor/js/vue.min.js" ></script>
 
 
 
@@ -52,6 +50,10 @@
 
 
 
+
+  
+    <script src="http://godmud.com/js/toc-collapse.js"></script>
+  
 
 
 
@@ -76,7 +78,7 @@ var _hmt = _hmt || [];
 <body>
     	<div id="app"><div ref="sideContainer" class="side-container">
     
-    <a class="a-block nav-head active" href="http://godmud.com">
+    <a class="a-block nav-head false" href="http://godmud.com">
     
         <div class="nav-title">
             我的工作灵感
@@ -90,9 +92,11 @@ var _hmt = _hmt || [];
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="../../posts/">
+            
+            <a class="a-block nav-link-item active" href="../../../../../posts/">
                 灵感
             </a>
             
@@ -102,7 +106,7 @@ var _hmt = _hmt || [];
             
             
             
-            <a class="a-block nav-link-item false" href="../../about/">
+            <a class="a-block nav-link-item false" href="../../../../../about/">
                 关于
             </a>
             
@@ -121,6 +125,11 @@ var _hmt = _hmt || [];
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -138,30 +147,6 @@ var _hmt = _hmt || [];
         </a>
         
         
-        
-            <div class="pagination-indicator">
-                <span style="text-align: center">
-                    2<br><div style="display: inline-block; transform: rotate(-28deg)">-</div><br>3
-                </span>
-            </div>
-            
-            
-            <a class="pagination-action" href="../../">
-                <i class="material-icons pagination-action-icon">
-                    chevron_left
-                </i>
-            </a>
-            
-
-            
-            <a class="pagination-action" href="../../page/3/">
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-            
-        
-        
     </div>
 </div>
 <div class="single-column-drawer-container" ref="drawer"
@@ -174,9 +159,11 @@ var _hmt = _hmt || [];
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="../../posts/">
+                
+                <a class="a-block drawer-menu-item active" href="../../../../../posts/">
                     灵感
                 </a>
                 
@@ -186,11 +173,16 @@ var _hmt = _hmt || [];
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="../../about/">
+                <a class="a-block drawer-menu-item false" href="../../../../../about/">
                     关于
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+</div>
             
         </div>
     </div>
@@ -231,321 +223,129 @@ var _hmt = _hmt || [];
 </div>
 
             <div id="content">
-
 <div ref="streamContainer" class="stream-container">
-    <div class="post-list-container post-list-container-no-background">
-        
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
             
-            <a href="http://godmud.com/posts/2016/08/31/epplus/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                使用EPPlus读写xlsx文件
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-08-31
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            
+            
 
-                        </div>
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    creator RichText组件 click标签回调路径的问题
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-07-13 09:20
+                        </time>
+                        
+
+                        
+
                         
                         
                     </div>
                 </div>
+            </div>
             
-        
-            
-            <a href="http://godmud.com/posts/2016/08/16/coroutine/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                异步编程的两种模型，闭包回调，和Lua的coroutine，到底哪一种消耗更大
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-08-16
-    &emsp;
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>RichText组件为我们提供了强大的富文本功能，但是在使用的过程中发现必须在富文本节点挂上一个脚本，所有的点击事件会在富文本所在节点上触发，但是做游戏的过程中我们的富文本可能只是整个ui界面中一个节点，所有的ui逻辑可能会在其他脚本上触发，例如我们会在整个ui上加一个脚本来管理ui所有子节点，这就导致富文本的点击在ui脚本上无法触发
+<img src="./mk-2022-07-13-09-20-52.png" alt="">
+图中的handler2只能在RichText组件所在的节点脚本上触发，定义在其他脚本是无法触发，这就很难受了，同时笔者也在想RichText内部是怎么实现的，为什么会有这样的限制，而Node自带的click属性却是可以直接指定调用的脚本组件，不需要我们为button所在的节点单独挂一个脚本
+<img src="./mk-2022-07-13-09-21-42.png" alt=""></p>
+<p>我们传入脚本的this，便可以直接在脚本中处理回调，但是，RichText却不行，必须要在RichText脚本组件上挂一个脚本，然后在里面写上点击的回调方法，这可不是一个好主意，如果每个界面都要有一个RichText，那……本着研究(偷懒)的精神，笔者去查看RichText组件的源码，终于发现了罪魁祸首：
+<img src="./mk-2022-07-13-09-22-10.png" alt="">
+组件中接手了touch事件，应该就是这里</p>
+<p>看到第一句！！！心想大事不妙，果然RichText是拿的组件节点上的脚本组件，this._labelSegments应该是富文本是RichText创建的每一个label,clickHandler就是我们定义的点击事件名，也就是脚本中的回调方法名，clickParam便是我们定义的方法参数。</p>
+<p>怎么办？改源码？让我们可以指定节点进去，然后在指定节点派发事件，这是一个好办法，说干就干，不行，改了还要从新编译迎请戴拿，这次改了引擎更新怎么办？本着不动引擎（偷懒）的精神，笔者决定换一种思路。</p>
+<p>既然必须在richText节点加脚本，加就完事了
+但是我们仍然想在ui脚本上触发事件怎么办？将方法回调在richText脚本的组件上定义一份，然后再ui脚本上定义一次，最后在richtext节点脚本的回调里再回调回ui脚本？</p>
+<p>就这么办，好像要写两个方法，不划算（偷懒），但是我们有Object.defineProperty这个东东</p>
+<p>这就很明白了，首先我们需要建立一个脚本挂在richText组件的节点上，</p>
+<p><code>RichTextEvent = cc.Class({ extends:cc.Component, properties: { _RichText:null, _object:null, },</code></p>
+<p>`setObject(Object){
+this._object = Object;
+},</p>
+<p>onLoad(){</p>
+<p>},
+start(){
+this._RichText = this.node.getComponent(cc.RichText);</p>
+<pre><code>let _labelSegments = this._RichText._labelSegments;
+for (let i = 0; i &lt; _labelSegments.length; ++i) {
+    let labelSegment = _labelSegments[i];
+    let clickHandler = labelSegment._clickHandler;
+    let clickParam = labelSegment._clickParam;
     
-    
-    
-    &emsp;
-    
-</div>
+    Object.defineProperty(this,clickHandler,{
+        __proto__: null,
+        enumerable: false,
+        configurable: false,
+        writable: true,
+        value:function(event,clickParam){
+            if(this._object&amp;&amp;this._object[clickHandler]){
+                this._object[clickHandler](event,clickParam);
+            }
+        }
+    });
+}
+</code></pre>
+<p>},
+onDestroy(){
+if(this._object){
+this._object = null;
+}
+}`</p>
+<p>在start中，我们获取RichText组件，紧接着获取组件中的_labelSegments列表，我们可以从里面获取每一个点击事件加参数，然后通过Object.defineProperty自动给脚本定义回调方法，在回调方法中，我们反过来回调到我们需要的脚本当中</p>
+<p>再建立一个方法，动态给每一个需要的RichText组件添加RichTextEvent
+<img src="./mk-2022-07-13-09-25-00.png" alt=""></p>
+<p>ok大功告成，在需要处理的脚本当中，我们只需要
+<img src="./mk-2022-07-13-09-25-23.png" alt=""></p>
+<p>给RichText赋值之后，我们只需要调用一下之前定义的全局方法即可，然后就可以愉快的在当前脚本中添加回调事件了
+结果：</p>
 
-                        </div>
-                        
-                        
-                    </div>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2022-07-13</p>
+                    
                 </div>
+            </div>
             
-        
             
-            <a href="http://godmud.com/posts/2016/08/14/async/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                async/await的多线程问题
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-08-14
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            <nav class="post-pagination">
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2016/08/11/wincase/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                Windows下检测文件名大小写是否匹配
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-08-11
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="http://godmud.com/posts/2022/07/13/20220713_1/">
+			上回<br>fgui输入框在cocos creator内位置偏上的问题及解决方案
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2016/01/30/ssdb/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                nosql使用感受
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-01-30
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2016/01/19/docker/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                docker 操作记录
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2016-01-19
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2015/12/31/nodejs/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                node.js使用感想
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2015-12-31
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2015/06/08/csnative2/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                C#与非托管——封送和自动封送
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2015-06-08
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2015/06/08/androidsdk/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                android sdk更新的终极解决方案
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2015-06-08
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-            
-            <a href="http://godmud.com/posts/2015/06/07/csnative1/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                C#与非托管——初体验
-                            </div>
-                            <div class="post-item-summary">
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2015-06-07
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
 
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            
-        
-        </a>
+            </div>
+        </div>
     </div>
 </div>
 
-            </div>
-
-<div class="pagination">
-    
-    <a class="pagination-action" href="../../" style="opacity:1">
-    
-        <i class="material-icons pagination-action-icon">
-            chevron_left
-        </i>
-    </a>
-
-        <div class="pagination-indicator">
-            <span>2/3</span>
-        </div>
-
-        
-        <a class="pagination-action" href="../../page/3/"
-           style="opacity:1">
-        
-                <i class="material-icons pagination-action-icon">
-                    chevron_right
-                </i>
-            </a>
-</div>
-
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 <a rel="external nofollow" href="https://beian.miit.gov.cn" target="_blank" style="color: inherit;">鄂ICP备2022011717号-1</a>
 
 </div>
