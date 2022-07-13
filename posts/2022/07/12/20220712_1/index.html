@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
 这两天公司下了一个新需求，是道具要支持玩家能够选择多连发，在这里出现了一个小插曲，需要执行的action有的是需要永久执行的，有的是需要按顺序执行的。因此，将Sequence、Spawn与RepeatForever一起使用时，发现了RepeatForever动作会失效，经过多方查阅资料才发现原来Sequence、Spawn与RepeatForever不能一起使用，要想达到我们需要的需求。Spawn只需要用这个节点分别执行这两个action即可，而Sequence则必须使用CallBackFunc创建action的方式来实现。好了接下来便是要讨论的内容了。</p>
 <p>##正文
 ###cocos中的定时器
-定时器在cocos引擎中可谓是非常重要的，cocos整个游戏的刷新、重绘都是在定时器中进行的。而要实现的功能——道具多连发，由于Repeat只能是等道具这一次发送完成之后才会开启第二次发送，因此必须使用定时器schedule来实现道具多发(那种前赴后继的效果)。</p>
+定时器在cocos引擎中可谓是非常重要的，cocos整个界面的刷新、重绘都是在定时器中进行的。而要实现的功能——道具多连发，由于Repeat只能是等道具这一次发送完成之后才会开启第二次发送，因此必须使用定时器schedule来实现道具多发(那种前赴后继的效果)。</p>
 <p>####1.schedule类与函数指针
 在使用schedule时,对这个类产生了极大的兴趣，于是决定探究一下源代码，因为schedule一般都是节点Node在使用，因此，在Node类中发现了一下这么多schedule重载函数：</p>
 <p>&rsquo;''</p>
@@ -415,7 +415,7 @@ CallFuncN::create([=](Node *node){
 	}), NULL));
 </code></pre>
 <p>&rsquo;&rsquo;'
-就能成功的执行了，因此我们以后可以在游戏中愉快的使用仿函数和Lambda表达式了</p>
+就能成功的执行了，因此我们以后可以在开发中愉快的使用仿函数和Lambda表达式了</p>
 
                     
                     <HR width="100%" id="EOF">
